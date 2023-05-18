@@ -1,7 +1,7 @@
-// Weather.js
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchWeather } from '../redux/Actions';
+import './weather.css'; // Import the CSS file
 
 // Weather component for a specific city
 const Weather = ({ city }) => {
@@ -18,7 +18,7 @@ const Weather = ({ city }) => {
 
   // Show loading state
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="card">Loading...</div>;
   }
 
   // If no data, don't render anything
@@ -28,7 +28,7 @@ const Weather = ({ city }) => {
 
   // Render weather data
   return (
-    <div>
+    <div className="card">
       <h2>{city}</h2>
       <p>Temperature: {weatherData.main.temp}</p>
       <p>Humidity: {weatherData.main.humidity}</p>

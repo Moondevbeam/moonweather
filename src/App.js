@@ -15,14 +15,13 @@ const store = configureStore({
 
 // Main App component
 const App = () => {
-  // List of cities
-  const cities = ['rome', 'london', 'tokyo'];
-
   return (
     <Provider store={store}>
-      <div>
-        {cities.map(city => <Weather key={city} city={city} />)}
-      </div>
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Weather city="Rome" />
+        <Weather city="Milan" />
+        <Weather city="Naples" />
+    </div>
     </Provider>
   );
 };
