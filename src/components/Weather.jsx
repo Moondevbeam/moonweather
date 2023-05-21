@@ -1,38 +1,37 @@
+// Weather.js
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchWeather } from '../redux/Actions';
-import './weather.css'; // Import the CSS file
+import './weather.css';
 
-// Weather component for a specific city
 const Weather = ({ city }) => {
   const dispatch = useDispatch();
 
-  // Get the weather data and loading state from Redux store
   const weatherData = useSelector(state => state.weather.data[city]);
   const loading = useSelector(state => state.weather.loading);
 
-  // Fetch weather data when the component mounts or city changes
   useEffect(() => {
     dispatch(fetchWeather(city));
   }, [city, dispatch]);
 
-  // Show loading state
+  const convertToCelsius = (temperature) => {
+    return Math.round(temperature - 273.15);
+  };
+
   if (loading) {
-    return <div className="card">Loading...</div>;
+    return <div>Loading...</div>;
   }
 
-  // If no data, don't render anything
   if (!weatherData) {
     return null;
   }
 
-  // Render weather data
   return (
-    <div className="card">
-      <h2>{city}</h2>
-      <p>Temperature: {weatherData.main.temp}</p>
-      <p>Humidity: {weatherData.main.humidity}</p>
-      <p>Wind Speed: {weatherData.wind.speed}</p>
+    <div className="weatherCard">
+      <h2 className="weatherTitle">{city}</h2>
+      <p className="weatherInfo">Temperature: {convertToCelsius(weatherData.main.temp)}°C</p>
+      <p className="weatherInfo">Weather: {weatherData.weather[0].description}</p>
+      <img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt="weather icon" />
     </div>
   );
 };

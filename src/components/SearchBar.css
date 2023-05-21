@@ -1,0 +1,7 @@
+/* searchbar.css */
+.searchbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Per non attaccarlo al bordo superiore */
+  }
+  
