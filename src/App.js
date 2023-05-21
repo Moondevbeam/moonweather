@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Searchbar onSubmit={handleAddCity} />
+        <Searchbar onSubmit={handleAddCity} existingCities={cities} />
         <div className="cardContainer">
           {cities.map(city => <Weather key={city} city={city} />)}
         </div>
