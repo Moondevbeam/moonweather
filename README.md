@@ -1,6 +1,6 @@
-# Weather App
+# moonWeather
 
-The "Weather App" project is a React web application that allows users to view current weather conditions for a specific city. It utilizes the OpenWeatherMap API to fetch weather data and displays the weather condition, temperature, and wind speed.
+The "moonWeather" project is a React web application that allows users to view current weather conditions for a specific city. It utilizes the OpenWeatherMap API to fetch weather data and displays the weather condition, temperature, and wind speed.
 
 ## Features
 
