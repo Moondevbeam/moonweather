@@ -14,7 +14,7 @@ The "moonWeather" project is a React web application that allows users to view c
 Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/yourusername/weather-app.git
+git clone https://github.com/yourusername/moonweather.git
 ```
 
 Install all the required packages.
